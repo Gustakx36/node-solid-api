@@ -16,7 +16,12 @@ app.use(bp.json());
 app.use(bp.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-    res.send('Teste')
+    res.send(`
+<p>Logar Usuario        - /logarUser/usuario/sessionId</p>
+<p>Criar Amizade        - /criarAmizade/usuario/amigo</p>
+<p>Conversa em Partes   - /conversaEmPartes/usuario/amigo/page/mensagensAmais</p>
+<p>Enviar Mensagem      - /enviarMensagem/usuario/amigo/msg</p>
+    `)
 });
 
 app.get(/\/logarUser\/([a-zA-Z0-9., ]+)(\/([a-zA-Z0-9., ]+)|)/, async (req, res) => {
